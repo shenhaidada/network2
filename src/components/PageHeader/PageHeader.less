@@ -1,0 +1,41 @@
+.home-page-header {
+  text-align     : right;
+  margin         : 24px 0;
+  padding        : 0 12px;
+  font-size      : 12px;
+  height         : 56px;
+  display        : flex;
+  align-items    : center;
+  justify-content: flex-end;
+
+  .header-member-profile {
+    padding-right: 8px;
+
+    .profile-name {
+      font-size  : 1rem;
+      font-weight: bold;
+    }
+
+    .profile-role {
+      font-size : .875rem;
+      text-align: left;
+    }
+  }
+
+  .header-member-avatar {
+    padding      : 4px;
+    border       : 1px solid #dee2e6;
+    border-radius: 50%;
+
+    .avatar-img {
+      display        : block;
+      height         : 46px;
+      width          : 46px;
+      padding        : 4px;
+      border         : 1px solid #dee2e6;
+      border-radius  : 50%;
+      background     : url("@/assets/avatar.jpg") no-repeat;
+      background-size: 56px 56px;
+    }
+  }
+}
