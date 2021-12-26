@@ -11,8 +11,40 @@
       background-color: #484c7f;
       border          : 0;
 
+      .aside-icon-wrapper {
+        display    : flex;
+        flex-flow  : row;
+        align-items: center;
+        cursor     : pointer;
+
+        .icon-text {
+          color       : #ffffff;
+          padding-left: 15px;
+          font-weight : bold;
+          font-size   : 18px;
+        }
+
+        .home-page-home-filled {
+          background-color: #ffffff;
+          height          : 60px;
+          width           : 60px;
+          border-radius   : 50%;
+          display         : flex;
+          align-items     : center;
+          justify-content : center;
+
+          svg {
+            height: 3rem;
+            width : 3rem;
+          }
+        }
+      }
+
+
+
       .aside-sub-menu {
         .el-sub-menu__title {
+          padding  : 0 !important;
           color    : #ffffff;
           font-size: 17px;
 
@@ -23,7 +55,8 @@
         }
 
         .el-menu-item-group__title {
-          color: #ffffff;
+          color  : #ffffff;
+          padding: 0; // 如果想要加标题，这个记得删除
 
           &:hover {
             color           : #F19828;
@@ -32,7 +65,8 @@
         }
 
         .el-menu-item {
-          color: #ffffff;
+          color       : #ffffff;
+          padding-left: 29px !important;
 
           &:hover {
             color           : #F19828;
