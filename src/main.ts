@@ -5,7 +5,7 @@ import 'element-plus/dist/index.css'
 
 // router
 
-import { router } from './router'
+import router from './router'
 
 import App from './App.vue'
 

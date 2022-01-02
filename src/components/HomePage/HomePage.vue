@@ -4,18 +4,16 @@
 
     <section class="home-page-mid">
       <PageHeader></PageHeader>
-
       <router-view></router-view>
-
     </section>
-
   </el-container>
 </template>
 
 <script setup lang="ts">
 // components
-import PageNav from '../PageNav/PageNav.vue'
-import PageHeader from '../PageHeader/PageHeader.vue'
+import PageNav from './PageNav.vue'
+import PageHeader from './PageHeader.vue'
+import PageContent from '@/components/HomePage/PageContent.vue'
 
 // node_modules
 import { ref, onMounted } from 'vue'

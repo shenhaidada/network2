@@ -130,7 +130,7 @@
   </section>
 </template>
 <script setup lang="ts">
-import { ref, nextTick } from 'vue'
+import { ref, nextTick, onUnmounted } from 'vue'
 import {
   Suitcase,
   Search,
@@ -178,6 +178,14 @@ nextTick(() => {
     ]
   }
   lineOption && lineChart.setOption(lineOption)
+  window.addEventListener('resize', function () {
+    lineChart.resize()
+  })
+  onUnmounted(() => {
+    window.removeEventListener('resize', function () {
+      lineChart.resize()
+    })
+  })
 
   // 饼状图逻辑
   let pieChart = echarts.init(pieChartRef.value)
