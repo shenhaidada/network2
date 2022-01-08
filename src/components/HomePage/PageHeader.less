@@ -9,40 +9,6 @@
   justify-content: flex-end;
   position       : relative;
 
-  .header-search-wrapper {
-    position        : absolute;
-    left            : 30px;
-    width           : 380px;
-    height          : 48px;
-    background-color: #eeeeee;
-    padding-left    : 15px;
-    display         : flex;
-    align-items     : center;
-    justify-content : flex-start;
-    border-radius   : .25rem;
-
-    .header-search {
-      flex            : 1;
-      border          : 0;
-      background-color: #eeeeee;
-      height          : 100%;
-      font-size       : 1.25rem;
-      padding         : 8px 16px;
-      color           : #212529;
-      border-radius   : .25rem;
-    }
-
-    .el-icon {
-      height: 1.8rem;
-      width : 1.8rem;
-
-      svg {
-        height: 1.8rem;
-        width : 1.8rem;
-      }
-    }
-  }
-
   .header-member-profile {
     padding-right: 8px;
 
@@ -53,24 +19,22 @@
 
     .profile-role {
       font-size : .875rem;
-      text-align: left;
+      text-align: right;
     }
   }
 
   .header-member-avatar {
-    padding      : 4px;
-    border       : 1px solid #dee2e6;
-    border-radius: 50%;
+    padding         : 4px;
+    border          : 1px solid #dee2e6;
+    background-color: #ffffff;
+    border-radius   : 50%;
 
     .avatar-img {
-      display        : block;
-      height         : 46px;
-      width          : 46px;
-      padding        : 4px;
-      border         : 1px solid #dee2e6;
-      border-radius  : 50%;
-      background     : url("@/assets/avatar.jpg") no-repeat;
-      background-size: 56px 56px;
+      display      : block;
+      height       : 56px;
+      width        : 56px;
+      border       : 1px solid #dee2e6;
+      border-radius: 50%;
     }
   }
 }

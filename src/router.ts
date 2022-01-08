@@ -5,6 +5,9 @@ import { createRouter, createWebHashHistory } from "vue-router";
 import HomePage from "@/components/HomePage/HomePage.vue"
 import PageContent from "@/components/HomePage/PageContent.vue"
 import Login from "@/components/Login/Login.vue"
+import UserManage from "@/components/UserManage/UserManage.vue"
+import DeviceManage from "@/components/DeviceManage/DeviceManage.vue"
+import DataDisplay from "@/components/DataDisplay/DataDisplay.vue"
 
 const routes = [
   {
@@ -21,6 +24,21 @@ const routes = [
         path: '/home-page-content',
         name: 'HomePageContent',
         component: PageContent
+      },
+      {
+        path: '/user-manage',
+        name: 'UserManage',
+        component: UserManage
+      },
+      {
+        path: '/device-manage',
+        name: 'DeviceManage',
+        component: DeviceManage
+      },
+      {
+        path: '/data-display',
+        name: 'DataDisplay',
+        component: DataDisplay
       }
     ]
   },
@@ -42,13 +60,16 @@ const router = createRouter({
   routes, // `routes: routes` 的缩写
 })
 router.beforeEach((to, from, next) => {
-  // 判断用户身份身份
-  // if (Math.floor(Math.random() * 2) === 0) {
-  //   next({ name: 'Login' })
-  // } else {
-  //   next()
-  // }
-  next()
+  if (to.name !== 'Login') {
+    // 判断用户是否登陆
+    if (sessionStorage.getItem('userHasLogin') === 'true') {
+      next()
+    } else {
+      next({ name: 'Login' })
+    }
+  } else {
+    next()
+  }
 })
 
 export default router

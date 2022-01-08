@@ -1,0 +1,110 @@
+.device-manage-wrapper {
+  padding-left: 30px;
+  display     : flex;
+  flex-flow   : row wrap;
+
+  .manage-button-list {
+    display       : flex;
+    padding-bottom: 20px;
+
+    .header-search-wrapper {
+      width           : 380px;
+      height          : 48px;
+      background-color: #eeeeee;
+      padding-left    : 15px;
+      display         : flex;
+      align-items     : center;
+      justify-content : flex-start;
+      border-radius   : .25rem;
+      margin-right    : 120px;
+
+      .header-search {
+        flex            : 1;
+        border          : 0;
+        background-color: #eeeeee;
+        height          : 100%;
+        font-size       : 1.25rem;
+        padding         : 8px 16px;
+        color           : #212529;
+        border-radius   : .25rem;
+      }
+
+      .el-icon {
+        height: 1.8rem;
+        width : 1.8rem;
+
+        svg {
+          height: 1.8rem;
+          width : 1.8rem;
+        }
+      }
+
+    }
+  }
+
+
+
+  .device-pagination-wrapper {
+    flex           : 1;
+    display        : flex;
+    justify-content: center;
+    padding-bottom : 30px;
+  }
+}
+
+.device-wrapper {
+  display  : flex;
+  flex-flow: row wrap;
+  min-width: 84vw;
+
+  .device {
+    width              : 230px;
+    // height          : 246px;
+    background-color   : #ffffff;
+    border             : 1px solid rgba(0, 0, 0, 0.125);
+    border-radius      : 0.25rem;
+    margin-right       : 30px;
+    margin-bottom      : 30px;
+    padding            : 30px;
+    display            : flex;
+    flex-flow          : row wrap;
+    justify-content    : center;
+    position           : relative;
+
+    &.margin-right-0 {
+      margin-right: 0;
+    }
+
+    .device-edit-button {
+      position: absolute;
+      top     : 12px;
+      left    : 12px;
+      padding : 6px 10px;
+    }
+
+    .device-delete-button {
+      position: absolute;
+      top     : 12px;
+      right   : 12px;
+      padding : 6px 10px;
+    }
+
+    .device-img {
+      width        : 200px;
+      height       : 200px;
+      border-radius: 50%;
+    }
+
+    .device-name {
+      padding-top: 20px;
+      font-size  : 1rem;
+      font-weight: bold;
+      line-height: 32px;
+      height     : 32px;
+
+      &.padding-top-0 {
+        padding-top: 0;
+      }
+    }
+  }
+}

@@ -4,7 +4,7 @@
     <section class="page-left-content">
       <!-- 大卡片区域 -->
       <div class="large-page-card-wrapper">
-        <p class="large-page-card-text">标题没想好</p>
+        <p class="large-page-card-text">简略数据展示</p>
         <div
           class="large-page-card"
           ref="lineChartRef"
@@ -14,44 +14,43 @@
       <!-- 2个小卡片 -->
       <div class="two-small-page-card">
         <div class="small-card small-card-margin-right">
-          <p class="card-header">卡片标题</p>
+          <p class="card-header">概况</p>
           <div class="four-card-wrapper">
             <div class="four-card-one">
               <el-icon>
                 <circle-check-filled />
               </el-icon>
-
-              <p class="four-card-title">标题</p>
-              <p class="four-card-description">描述</p>
+              <p class="four-card-title">氧气</p>
+              <p class="four-card-description">484</p>
             </div>
             <div class="four-card-one">
               <el-icon>
                 <watch />
               </el-icon>
-              <p class="four-card-title">标题</p>
-              <p class="four-card-description">描述</p>
+              <p class="four-card-title">二氧化碳</p>
+              <p class="four-card-description">260</p>
             </div>
             <div class="four-card-one">
               <el-icon>
                 <video-camera />
               </el-icon>
-              <p class="four-card-title">标题</p>
-              <p class="four-card-description">描述</p>
+              <p class="four-card-title">臭氧</p>
+              <p class="four-card-description">220</p>
             </div>
             <div class="four-card-one">
               <el-icon>
                 <star />
               </el-icon>
-              <p class="four-card-title">标题</p>
-              <p class="four-card-description">描述</p>
+              <p class="four-card-title">PM2.5</p>
+              <p class="four-card-description">380</p>
             </div>
           </div>
         </div>
         <!-- 展示饼图 -->
         <div class="small-card small-card-margin-left">
           <p class="pie-chart-description">
-            <span>数据总数</span>
-            <span class="description-number">458</span>
+            <span>数据类型总数</span>
+            <span class="description-number">9</span>
           </p>
           <div
             class="pie-chart-wrapper"
@@ -71,7 +70,7 @@
         <el-icon class='icon-monitor'>
           <monitor />
         </el-icon>
-        <p class="right-card-large-title">2000</p>
+        <p class="right-card-large-title">13</p>
         <p class="right-card-large-description">Machines</p>
       </div>
       <!-- 右边的一些小卡片 -->
@@ -80,7 +79,7 @@
           <search />
         </el-icon>
         <div class="small-icon-text">
-          <p class="small-icon-text-title">100</p>
+          <p class="small-icon-text-title">44</p>
           <p class="small-icon-text-description">次探测</p>
         </div>
         <el-icon class="right-card-small-right-icon">
@@ -93,7 +92,7 @@
           <search />
         </el-icon>
         <div class="small-icon-text">
-          <p class="small-icon-text-title">100</p>
+          <p class="small-icon-text-title">245</p>
           <p class="small-icon-text-description">次探测</p>
         </div>
         <el-icon class="right-card-small-right-icon">
@@ -106,7 +105,7 @@
           <search />
         </el-icon>
         <div class="small-icon-text">
-          <p class="small-icon-text-title">100</p>
+          <p class="small-icon-text-title">310</p>
           <p class="small-icon-text-description">次探测</p>
         </div>
         <el-icon class="right-card-small-right-icon">
@@ -119,7 +118,7 @@
           <search />
         </el-icon>
         <div class="small-icon-text">
-          <p class="small-icon-text-title">100</p>
+          <p class="small-icon-text-title">320</p>
           <p class="small-icon-text-description">次探测</p>
         </div>
         <el-icon class="right-card-small-right-icon">
@@ -165,14 +164,24 @@ nextTick(() => {
     },
     xAxis: {
       type: 'category',
-      data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+      data: [
+        '空气',
+        '湿度',
+        '温度',
+        '氧气',
+        '二氧化碳',
+        'PM2.5',
+        '臭氧',
+        '一氧化碳',
+        '降雨量'
+      ]
     },
     yAxis: {
       type: 'value'
     },
     series: [
       {
-        data: [150, 230, 224, 218, 135, 147, 260],
+        data: [150, 230, 224, 218, 135, 147, 260, 224, 218],
         type: 'line'
       }
     ]
@@ -221,11 +230,15 @@ nextTick(() => {
           show: false
         },
         data: [
-          { value: 1048, name: 'Search Engine' },
-          { value: 735, name: 'Direct' },
-          { value: 580, name: 'Email' },
-          { value: 484, name: 'Union Ads' },
-          { value: 300, name: 'Video Ads' }
+          { value: 1048, name: '空气' },
+          { value: 735, name: '湿度' },
+          { value: 580, name: '温度' },
+          { value: 484, name: '氧气' },
+          { value: 260, name: '二氧化碳' },
+          { value: 380, name: 'PM2.5' },
+          { value: 220, name: '臭氧' },
+          { value: 444, name: '一氧化碳' },
+          { value: 321, name: '降雨量' }
         ]
       }
     ]

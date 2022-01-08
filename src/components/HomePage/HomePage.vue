@@ -14,11 +14,6 @@
 import PageNav from './PageNav.vue'
 import PageHeader from './PageHeader.vue'
 import PageContent from '@/components/HomePage/PageContent.vue'
-
-// node_modules
-import { ref, onMounted } from 'vue'
-
-onMounted(() => {})
 </script>
 
 <style lang="less">

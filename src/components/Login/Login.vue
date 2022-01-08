@@ -17,7 +17,7 @@
               v-model="loginForm.username"
               type="text"
               placeholder="用户名"
-              @blur="usernameValidate"
+              @blur="validateUsername"
             ></el-input>
           </el-form-item>
           <el-form-item
@@ -28,7 +28,7 @@
               v-model="loginForm.password"
               type="password"
               placeholder="密码"
-              @blur="passwordValidate"
+              @blur="validatePassword"
             ></el-input>
           </el-form-item>
         </el-form>
@@ -46,8 +46,19 @@
 </template>
 
 <script setup lang="ts">
+// vue
 import { useRouter } from 'vue-router'
-import { reactive, ref } from 'vue'
+import { reactive, watch } from 'vue'
+
+//utils
+import request from '@/utils/request.ts'
+
+// logic
+import {
+  usernameValidate,
+  passwordValidate
+} from '@/common/validate/validate.ts'
+
 /**
  * @description
  * 登陆逻辑
@@ -76,33 +87,38 @@ let loginError = reactive<LoginError>({
   passwordError: ''
 })
 // 用户名校验
-function usernameValidate() {
-  if (loginForm.username === '') {
-    loginError.usernameError = '请输入用户名'
-  } else if (new String(loginForm.username).length > 20) {
-    loginError.usernameError = '用户名长度最多20'
-  } else {
-    // 校验通过
-    loginError.usernameError = ''
-  }
+function validateUsername() {
+  loginError.usernameError = usernameValidate(loginForm.username)
 }
 // 密码校验
-function passwordValidate() {
-  if (loginForm.password === '') {
-    loginError.passwordError = '请输入密码'
-  } else {
-    loginError.passwordError = ''
-  }
+function validatePassword() {
+  loginError.passwordError = passwordValidate(loginForm.password)
 }
+
 // 点击事件 触发校验
-function handleLoginClick() {
+async function handleLoginClick() {
   // 用户名和密码校验
-  usernameValidate()
-  passwordValidate()
+  validateUsername()
+  validatePassword()
   if (loginError.passwordError === '' && loginError.usernameError === '') {
     // 跳转
+    try {
+      let result = await request('post', 'user/sign_in', {
+        name: loginForm.username,
+        password: loginForm.password
+      })
+      console.log('result: ', result)
+      if (result.data.code === 200) {
+        sessionStorage.setItem('userHasLogin', 'true')
+        sessionStorage.setItem('username', result.data.data.user.Name + '')
+        sessionStorage.setItem('isAdmin', result.data.data.user.IsAdmin + '')
+        sessionStorage.setItem('userId', result.data.data.user.Id + '')
+        router.push('/')
+      }
+    } catch (error) {
+      console.log('error: ', error)
+    }
   }
-  router.push('/')
 }
 </script>
 <style lang="less">
